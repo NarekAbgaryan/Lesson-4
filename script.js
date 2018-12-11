@@ -53,7 +53,7 @@ function main() {
 
     function deleteFromDom() {
         var pTags = document.getElementsByTagName("p");
-        for (var i in pTags) {
+        for (var i in pTags){
             if (pTags.length > 0) {
                 chatDiv.removeChild(pTags[0])
             }
