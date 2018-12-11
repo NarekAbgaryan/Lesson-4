@@ -5,7 +5,7 @@ body {
 #chat {
     width: 1000px;
     margin:auto;
-    background-color: #FAFAFA;
+    background-color: rgb(255, 255, 255);
     border: 1px solid #acacac;
     padding: 1em;   
     text-align: center;

@@ -18,9 +18,9 @@ io.on('connection', function (socket) {
         messages.push(data);
         io.sockets.emit("display message", data);
     });
-    socket.on("Can I Delete", function (data) {
+    socket.on("Karam Jnjem", function () {
         messages=[];
-        io.sockets.emit("You can!" );
+        io.sockets.emit("Jnjeq" );
     });
  });
  

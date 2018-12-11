@@ -14,14 +14,14 @@
 //     console.log("Clicked at X: " + evt.pageX + ", Y: " + evt.pageY);
 //  }
 //  window.onclick = bodyClick;
- 
 
- 
+
+
 //  function click(evt) {
 //     console.log(evt.pageX, evt.pageY);
 //  }
 //  window.onclick = click;
- 
+
 
 
 //-------------------------------------------------------------------------------//
@@ -30,8 +30,8 @@ function main() {
     var chatDiv = document.getElementById('chat');
     var input = document.getElementById('message');
     var button = document.getElementById('submit');
-    var buttonofDel = document.getElementById('delete');
- 
+    var Del = document.getElementById('delete');
+
     function handleSubmit(evt) {
         var val = input.value;
         if (val != "") {
@@ -39,20 +39,28 @@ function main() {
         }
     }
     button.onclick = handleSubmit;
- 
+
     function handleMessage(msg) {
-   		var p = document.createElement('p');
-   		p.innerText = msg;
-   		chatDiv.appendChild(p);
-   		input.value = "";
-}
-function handleDel() {
-        socket.emit("Can I Delete",);
+        var p = document.createElement('p');
+        p.innerText = msg;
+        chatDiv.appendChild(p);
+        input.value = "";
     }
-    buttonofDel.onclick = handleDel;
+    function handleDel() {
+        socket.emit("Karam Jnjem");
+    }
+    Del.onclick = handleDel;
 
-
-socket.on('display message', handleMessage);
+    function deleteFromDom() {
+        var pTags = document.getElementsByTagName("p");
+        for (var i in pTags) {
+            if (pTags.length > 0) {
+                chatDiv.removeChild(pTags[0])
+            }
+        }
+    }
+    socket.on('display message', handleMessage);
+    socket.on("Jnjeq", deleteFromDom)
 } // main closing bracket
 
 window.onload = main;
